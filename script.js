@@ -18,7 +18,7 @@ function renderProdutos() {
           <h5 class="card-title">${p.nome}</h5>
           <p class="card-text">${p.descricao}</p>
           <p class="card-text"><strong>${p.preco}</strong></p>
-          <a href="#" class="btn btn-primary">Comprar</a>
+          <button class="btn btn-primary">Comprar</button>
         </div>
       </div>
     `;
@@ -26,4 +26,14 @@ function renderProdutos() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", renderProdutos);
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderProdutos();
+
+  // Adiciona evento de clique aos botões Comprar
+  document.querySelectorAll("button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      alert("Produto adicionado ao carrinho!");
+    });
+  });
+});
